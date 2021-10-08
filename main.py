@@ -11,7 +11,7 @@ class Main(QMainWindow):
         self.mylist = []
         self.english = []
         self.persian = []
-        file = open('translate.txt',encoding='utf8')
+        file = open('translate.txt',encoding='UTF-8')
         data=file.read().lower().split("\n")
         for i in range(len(data)):
             if i%2==0:
@@ -24,7 +24,6 @@ class Main(QMainWindow):
         self.ui.radio1.setChecked(True)
         self.ui.btn.clicked.connect(self.translate)
         self.ui.help.triggered.connect(self.help)
-        print(self.mylist)
     
     def translate(self):
         if self.ui.radio1.isChecked():
